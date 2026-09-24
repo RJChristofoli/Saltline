@@ -1,0 +1,44 @@
+name: Research or RFC
+description: Investigate uncertainty and finish with a documented decision
+title: "[Research]: "
+labels:
+  - "type:research"
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Decision question
+      description: Which decision cannot yet be made confidently?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why does this decision matter now?
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options to evaluate
+      description: List plausible options and known constraints.
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: Required deliverable
+      description: Define the decision, experiment, ADR, or recommendation this issue must produce.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        - [ ] Evidence is documented
+        - [ ] Tradeoffs are compared
+        - [ ] A recommendation or decision is recorded
+    validations:
+      required: true

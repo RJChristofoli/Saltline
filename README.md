@@ -43,6 +43,10 @@ The first version will focus on deep support for Python/Django and TypeScript/Re
 
 Saltline is in the earliest stage of development. The architecture and first vertical slice are currently being designed.
 
+## Contributing
+
+Saltline uses GitHub Issues, milestones, pull requests, and a public project board to plan and track development. See [CONTRIBUTING.md](CONTRIBUTING.md) for the workflow and [docs/project-workflow.md](docs/project-workflow.md) for the reasoning behind it.
+
 ## License
 
 Saltline is available under the [MIT License](LICENSE).

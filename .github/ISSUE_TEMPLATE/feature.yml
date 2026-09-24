@@ -1,0 +1,43 @@
+name: Feature
+description: Propose a user-visible capability or engineering outcome
+title: "[Feature]: "
+labels:
+  - "type:feature"
+body:
+  - type: markdown
+    attributes:
+      value: Describe the problem before proposing the implementation.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem should Saltline solve, and for whom?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected outcome
+      description: What observable capability should exist when this is complete?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List testable conditions that define completion.
+      placeholder: |
+        - [ ] Given ..., when ..., then ...
+        - [ ] Documentation or tests are updated
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals
+      description: What is intentionally outside this issue?
+  - type: textarea
+    id: notes
+    attributes:
+      label: Technical notes
+      description: Constraints, dependencies, risks, or relevant design references.
