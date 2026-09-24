@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Saltline project board
+    url: https://github.com/users/RJChristofoli/projects
+    about: Review planned and active work before opening a new issue.
