@@ -1,0 +1,25 @@
+name: Branch name
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate branch name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check conventional branch format
+        env:
+          BRANCH_NAME: ${{ github.head_ref }}
+        run: |
+          pattern='^(feat|fix|refactor|chore|docs|test|ci|build|perf|revert)/[0-9]+-[a-z0-9]+(-[a-z0-9]+)*$'
+          if [[ ! "$BRANCH_NAME" =~ $pattern ]]; then
+            echo "Invalid branch name: $BRANCH_NAME"
+            echo "Expected: <type>/<issue-number>-<lowercase-kebab-case>"
+            echo "Example: feat/12-python-ast-parser"
+            exit 1
+          fi

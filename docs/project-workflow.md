@@ -31,6 +31,20 @@ Labels answer four different questions:
 
 Board status should not be duplicated as a label because the project field already owns that information.
 
+Priority labels are ordered by urgency and impact:
+
+- `priority:critical` — immediate attention; blocks delivery or protects correctness;
+- `priority:high` — important for the active milestone;
+- `priority:medium` — normal-priority planned work;
+- `priority:low` — useful work with limited urgency;
+- `priority:very-low` — a nice-to-have with no current commitment.
+
+Priority does not represent effort. A critical issue may be small, while a low-priority issue may be large; `size:*` captures that separate dimension.
+
+## Branch naming
+
+Branches follow `<type>/<issue-number>-<short-description>`, using the prefixes documented in `CONTRIBUTING.md`. Keeping the issue number in the branch connects local work, pull requests, and the planning history without making the issue type responsible for implementation details.
+
 ## Milestones and releases
 
 A milestone should end in a demonstrable capability, not simply a date. The initial sequence is:

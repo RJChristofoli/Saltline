@@ -7,7 +7,7 @@ Saltline is developed in small, reviewable increments. Every change should start
 1. Select an issue from the project board.
 2. Confirm that the issue has clear acceptance criteria and no unresolved dependencies.
 3. Move it to **Ready**, then to **In progress** when work begins.
-4. Create a branch from `main` using `issue-<number>/<short-description>`.
+4. Create a branch from `main` using `<type>/<issue-number>-<short-description>`.
 5. Keep commits focused and use Conventional Commits.
 6. Open a pull request that links the issue with `Closes #<number>`.
 7. Record tests, design decisions, and relevant limitations in the pull request.
@@ -36,12 +36,35 @@ A change is done when:
 
 ## Branches and commits
 
-Branch examples:
+Branches use a Conventional Commits-inspired prefix, followed by the issue number and a lowercase kebab-case description:
 
 ```text
-issue-12/python-ast-parser
-issue-18/hotspot-ranking
+<type>/<issue-number>-<short-description>
 ```
+
+Allowed prefixes:
+
+- `feat/` — new capability;
+- `fix/` — bug fix;
+- `refactor/` — internal restructuring without a behavior change;
+- `chore/` — maintenance or repository work;
+- `docs/` — documentation-only change;
+- `test/` — test-only change;
+- `ci/` — continuous integration or delivery;
+- `build/` — packaging or dependency infrastructure;
+- `perf/` — performance improvement;
+- `revert/` — reversal of an earlier change.
+
+Examples:
+
+```text
+feat/12-python-ast-parser
+fix/18-commit-author-fallback
+refactor/24-graph-boundaries
+chore/31-update-tooling
+```
+
+The branch-name workflow validates this format on every pull request.
 
 Commit examples:
 
