@@ -75,6 +75,26 @@ docs: explain hotspot scoring
 test: cover cyclic import detection
 ```
 
+## Local quality checks
+
+Use Python 3.11 or newer. After creating and activating a virtual environment,
+install the development dependencies and run the same checks as CI from the
+repository root:
+
+```bash
+python -m pip install -e '.[dev]'
+python -m ruff format --check .
+python -m ruff check .
+python -m mypy
+python -m pytest
+python -m build
+```
+
+The GitHub Actions quality workflow runs these commands on pull requests and
+pushes to `main` with Python 3.11, 3.12, 3.13, and 3.14. It caches pip downloads
+using the hash of `pyproject.toml`; it does not cache the environment or build
+artifacts.
+
 ## Pull requests
 
 Prefer small pull requests with one primary purpose. If implementation reveals a separate concern, create another issue instead of silently expanding the scope.
