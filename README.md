@@ -41,7 +41,22 @@ The first version will focus on deep support for Python/Django and TypeScript/Re
 
 ## Status
 
-Saltline is in the earliest stage of development. The architecture and first vertical slice are currently being designed.
+Saltline is in early development. The [v0.1 architecture](docs/adr/0001-v01-technical-architecture.md) is defined, and the Python package and CLI foundation are available. Repository analysis commands are planned but not yet implemented.
+
+## Local setup
+
+Requires Python 3.11 or newer. From the repository root:
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -e '.[dev]'
+saltline --help
+saltline --version
+python -m pytest
+```
+
+The package has no runtime dependencies. The optional `dev` extra installs test and package-build tools. `python -m saltline` also runs the CLI.
 
 ## Contributing
 
